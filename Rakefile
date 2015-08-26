@@ -1,11 +1,12 @@
 require 'bundler/setup'
 require 'chronic'
 require 'erb'
-require 'github/markup'
+require 'redcarpet'
 require 'json'
 
 task :default do
-  @html = GitHub::Markup.render('README.md')
+  markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+  @html = markdown.render(File.read('README.md'))
   File.write('index.html', ERB.new(File.read('index.html.erb')).result)
 
   @data = []
