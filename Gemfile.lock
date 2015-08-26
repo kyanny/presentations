@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    chronic (0.10.2)
+    github-markup (1.4.0)
+    redcarpet (3.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  chronic
+  github-markup
+  redcarpet
+
+BUNDLED WITH
+   1.10.6
