@@ -1,0 +1,28 @@
+$(function () {
+  $('#container').highcharts({
+
+    chart: {
+      type: 'bubble',
+      zoomType: 'xy'
+    },
+
+    title: {
+      text: 'Attendance Punchcard'
+    },
+    xAxis: {
+      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+    yAxis: {
+      categories: <%= @years.to_json %>,
+      max: <%= @years.size - 1 %>,
+      min: 0
+    },
+    series: [{
+      data: <%= @data2.to_json %>,
+      maxSize: '10%',
+      minSize: 10
+    }]
+
+  });
+
+});
