@@ -10,11 +10,13 @@ $(function () {
       text: 'Attendance Punchcard'
     },
     xAxis: {
-      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      max: 12-1,
+      min: 0
     },
     yAxis: {
       categories: <%= @years.to_json %>,
-      max: <%= @years.size - 1 %>,
+      max: <%= @years.size-1 %>,
       min: 0
     },
     series: [{

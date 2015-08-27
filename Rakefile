@@ -44,7 +44,7 @@ task :default do
           cnt += 1
         end
       end
-      @data2 << [x, y, cnt] unless cnt.zero?
+      @data2 << [x-1, y, cnt] unless cnt.zero?
     end
   end
   File.write('punchcard.js', ERB.new(File.read('punchcard.js.erb')).result)
